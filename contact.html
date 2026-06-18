@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Teri Studio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs"></script>
+
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="bg-[#f5f0e8] text-gray-800">
+  <div class="max-w-6xl mx-auto px-4">
+
+    <nav x-data="{ open: false }" class="py-5 border-b border-gray-300">
+      <div class="flex items-center justify-between">
+        <a href="professional_site.html" class="text-[24px] font-bold text-[#6d28d9]">
+          Teri Studio
+        </a>
+
+        <button @click="open = !open" class="md:hidden border px-3 py-2 rounded">
+          Menu
+        </button>
+
+        <div :class="open ? 'block' : 'hidden'" class="w-full md:w-auto mt-4 md:mt-0 md:flex gap-6">
+          <a href="services.html" class="block py-2 md:py-0 hover:text-[#6d28d9]">Services</a>
+          <a href="contact.html" class="block py-2 md:py-0 hover:text-[#6d28d9]">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="py-12">
+      <section class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <p class="text-[#6d28d9] font-bold uppercase tracking-[0.2em]">
+            Contact
+          </p>
+
+          <h1 class="text-3xl md:text-5xl font-bold mt-4">
+            Let's work on a simple and clear website.
+          </h1>
+
+          <p class="mt-5 text-lg">
+            This page has a basic contact section and an Alpine.js image carousel.
+            The carousel changes the image when the buttons are clicked.
+          </p>
+
+          <div class="card mt-6">
+            <p><strong>Email:</strong> sz4449@nyu.edu</p>
+            <p class="mt-2"><strong>Location:</strong> New York, NY</p>
+            <p class="mt-2"><strong>Focus:</strong> Web Design and UX Design</p>
+          </div>
+        </div>
+
+        <div
+          x-data="{
+            images: [
+              'https://loremflickr.com/1000/700/cat,office?lock=1',
+              'https://loremflickr.com/1000/700/cat,desk?lock=2',
+              'https://loremflickr.com/1000/700/cat,computer?lock=3'
+            ],
+            currentIndex: 0
+          }"
+          class="card"
+        >
+          <img
+            :src="images[currentIndex]"
+            alt="Animal office carousel"
+            class="w-full h-72 object-cover rounded"
+          >
+
+          <div class="flex justify-between items-center mt-4">
+            <button
+              @click="currentIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1"
+              class="border px-4 py-2 rounded"
+            >
+              Previous
+            </button>
+
+            <p class="text-sm">
+              Image <span x-text="currentIndex + 1"></span> of 3
+            </p>
+
+            <button
+              @click="currentIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1"
+              class="bg-[#6d28d9] text-white px-4 py-2 rounded"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+</body>
+</html>

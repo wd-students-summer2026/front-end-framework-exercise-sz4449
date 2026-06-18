@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Teri Studio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs"></script>
+
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="bg-[#f5f0e8] text-gray-800">
+  <div class="max-w-6xl mx-auto px-4">
+
+    <nav x-data="{ open: false }" class="py-5 border-b border-gray-300">
+      <div class="flex items-center justify-between">
+        <a href="professional_site.html" class="text-[24px] font-bold text-[#6d28d9]">
+          Teri Studio
+        </a>
+
+        <button @click="open = !open" class="md:hidden border px-3 py-2 rounded">
+          Menu
+        </button>
+
+        <div :class="open ? 'block' : 'hidden'" class="w-full md:w-auto mt-4 md:mt-0 md:flex gap-6">
+          <a href="services.html" class="block py-2 md:py-0 hover:text-[#6d28d9]">Services</a>
+          <a href="contact.html" class="block py-2 md:py-0 hover:text-[#6d28d9]">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="py-12">
+      <section class="text-center">
+        <p class="text-[#6d28d9] font-bold uppercase tracking-[0.2em]">
+          Services
+        </p>
+
+        <h1 class="text-3xl md:text-5xl font-bold mt-4">
+          What Teri Studio Offers
+        </h1>
+
+        <p class="mt-5 text-lg max-w-2xl mx-auto">
+          This page explains simple professional services related to web design,
+          user experience, and online communication.
+        </p>
+      </section>
+
+      <section class="grid md:grid-cols-3 gap-6 mt-10">
+        <div class="card">
+          <h2 class="text-2xl font-bold mb-2">Web Design</h2>
+          <p>
+            I create clean and responsive web pages using HTML, CSS, and Tailwind CSS.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 class="text-2xl font-bold mb-2">UX Planning</h2>
+          <p>
+            I organize page layouts, navigation, and content so users can understand the site easily.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 class="text-2xl font-bold mb-2">Visual Communication</h2>
+          <p>
+            I use simple colors, spacing, and images to make information easier to read.
+          </p>
+        </div>
+      </section>
+
+      <section class="card mt-10">
+        <h2 class="text-2xl font-bold mb-3">My Design Goal</h2>
+        <p>
+          A professional website should be clear, useful, and comfortable to use.
+          This sample site uses a simple style because I want visitors to focus on the message.
+        </p>
+      </section>
+    </main>
+
+  </div>
+</body>
+</html>

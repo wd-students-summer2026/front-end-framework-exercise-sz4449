@@ -1,2 +1,88 @@
-<!-- insert your HTML code here -->
-<!-- don't forget to make two other HTML documents also -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teri Studio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs"></script>
+
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="bg-[#f5f0e8] text-gray-800">
+  <div class="max-w-6xl mx-auto px-4">
+
+    <nav x-data="{ open: false }" class="py-5 border-b border-gray-300">
+      <div class="flex items-center justify-between">
+        <a href="professional_site.html" class="text-[24px] font-bold text-[#6d28d9]">
+          Teri Studio
+        </a>
+
+        <button @click="open = !open" class="md:hidden border px-3 py-2 rounded">
+          Menu
+        </button>
+
+        <div :class="open ? 'block' : 'hidden'" class="w-full md:w-auto mt-4 md:mt-0 md:flex gap-6">
+          <a href="services.html" class="block py-2 md:py-0 hover:text-[#6d28d9]">Services</a>
+          <a href="contact.html" class="block py-2 md:py-0 hover:text-[#6d28d9]">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="grid md:grid-cols-2 gap-8 items-center py-12">
+        <div>
+          <p class="text-[#6d28d9] font-bold uppercase tracking-[0.2em]">
+            Professional Web Design
+          </p>
+
+          <h1 class="text-3xl md:text-5xl font-bold mt-4">
+            Clean websites for clear communication.
+          </h1>
+
+          <p class="mt-5 text-lg">
+            Teri Studio is a simple professional site about web design,
+            user experience, and visual communication.
+          </p>
+
+          <div class="mt-6 flex flex-col sm:flex-row gap-4">
+            <a href="services.html" class="bg-[#6d28d9] text-white px-5 py-3 rounded text-center">
+              View Services
+            </a>
+
+            <a href="contact.html" class="border border-[#6d28d9] text-[#6d28d9] px-5 py-3 rounded text-center">
+              Contact Me
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1000&auto=format&fit=crop"
+               alt="Office desk"
+               class="w-full rounded">
+        </div>
+      </section>
+
+      <section class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-12">
+        <div class="card">
+          <h2 class="text-2xl font-bold mb-2">Responsive</h2>
+          <p>The layout changes for small and large screens.</p>
+        </div>
+
+        <div class="card">
+          <h2 class="text-2xl font-bold mb-2">Simple</h2>
+          <p>The design uses clear text, spacing, and easy navigation.</p>
+        </div>
+
+        <div class="card">
+          <h2 class="text-2xl font-bold mb-2">Interactive</h2>
+          <p>The site uses Alpine.js for the menu and carousel.</p>
+        </div>
+      </section>
+    </main>
+
+  </div>
+</body>
+</html>
